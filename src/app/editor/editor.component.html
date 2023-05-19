@@ -1,0 +1,29 @@
+<div class="container">
+    <input type="file" accept="video/*" (change)="cargarVideo($event)">
+    <div class="video-container">
+        <video #video controls></video>
+        <p>wow</p>
+        <canvas #canvas></canvas>
+    </div>
+    <div class="video-effects">
+        <div class="effect-item" (click)="aplicarEfectoVideo('sobel')">Sobel</div>
+        <div class="effect-item" (click)="aplicarEfectoVideo('blur')">Blur</div>
+        <div class="effect-item" (click)="aplicarEfectoVideo('efecto3')">Sepia</div>
+        <div class="effect-item" (click)="aplicarEfectoVideo('efecto4')">Invert</div>
+        <div class="effect-item" (click)="aplicarEfectoVideo('efecto5')">Sharpen</div>
+    </div>
+
+    <div class="audio-effects">
+        <div class="effect-item" (click)="aplicarEfectoAudio('Flanger')">Flanger</div>
+        <div class="effect-item" (click)="aplicarEfectoAudio('Wah-wah')">Wah-Wah</div>
+        <div class="effect-item" (click)="aplicarEfectoAudio('Tremolo')">Tremolo</div>
+        <div class="effect-item" (click)="aplicarEfectoAudio('Delay')">Delay</div>
+        <div class="effect-item" (click)="aplicarEfectoAudio('Fuzz')">Distorsion</div>
+    </div>
+
+    <div class="image-overlay">
+    </div>
+
+    <button class="export-button" (click)="exportarVideo()">Exportar video</button>
+
+</div>

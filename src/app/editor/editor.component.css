@@ -1,20 +1,26 @@
-/* Estilos CSS */
-.container {
+  /* Estilos CSS */
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
   }
-  
-  .video-player {
-    width: 600px;
-    height: 400px;
-    background-color: black;
+
+  .video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .video-effects {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
   }
-  
-  .effect-list {
+  .audio-effects {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -25,20 +31,6 @@
     cursor: pointer;
   }
   
-  .image-overlay {
-    position: relative;
-    width: 600px;
-    height: 400px;
-    background-color: black;
-  }
-  
-  .overlay-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
   
   .export-button {
     padding: 10px 20px;
