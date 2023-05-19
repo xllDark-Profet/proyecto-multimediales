@@ -1,35 +1,101 @@
-<div class="container">
-    <input type="file" accept="video/*" (change)="cargarVideo($event)">
-    <div class="video-container">
-        <video #video controls></video>
-        <p> </p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editor de Video</title>
+    <link rel="stylesheet" href="editor.component.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_play_button_icon_%282013–2017%29.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        </a>
+        <a class="navbar-brand text-white" href="#">Video editor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtros
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Flanger</a></li>
+                <li><a class="dropdown-item" href="#">Wah-Wah</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Blur</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container op">
+      <h3>Ingrese el vídeo que quiere editar:</h3>
+      <input class="form-control form-control-sm op" id="formFileSm" type="file" accept="video/*" (change)="cargarVideo($event)"/>
+      
+      <div class="embed-responsive embed-responsive-16by9 op" >
+        <video #video class="embed-responsive-item" controls></video>
         <canvas #canvas ></canvas>
-    </div>
-    <div class="container-video">
-        <p>Funciones de video</p>
-        <div class="video-effects">
-            <div class="effect-item" (click)="aplicarEfectoVideo('sobel')">Sobel</div>
-            <div class="effect-item" (click)="aplicarEfectoVideo('blur')">Blur</div>
-            <div class="effect-item" (click)="aplicarEfectoVideo('efecto3')">Sepia</div>
-            <div class="effect-item" (click)="aplicarEfectoVideo('efecto4')">Invert</div>
-            <div class="effect-item" (click)="aplicarEfectoVideo('efecto5')">Sharpen</div>
+      </div>
+
+      <div class="container ">
+        <div class="container-video op">
+          <h3>Funciones de video:</h3>
+            <div class="video-effects">
+                <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('sobel')">Sobel</button>
+                <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('blur')">Blur</button>
+                <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('efecto3')">Sepia</button>
+                <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('efecto4')">Invert</button>
+                <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('efecto5')">Sharpen</button>
+            </div>
         </div>
-    </div>
-    <div class="container-audio">
-        <p>Funciones de audio</p>
-        <div class="audio-effects">
-            <div class="effect-item" (click)="aplicarEfectoAudio('Flanger')">Flanger</div>
-            <div class="effect-item" (click)="aplicarEfectoAudio('Wah-wah')">Wah-Wah</div>
-            <div class="effect-item" (click)="aplicarEfectoAudio('Tremolo')">Tremolo</div>
-            <div class="effect-item" (click)="aplicarEfectoAudio('Delay')">Delay</div>
-            <div class="effect-item" (click)="aplicarEfectoAudio('Fuzz')">Distorsion</div>
+        <div class="container-audio">
+            <h3>Funciones de audio:</h3>
+            <div class="audio-effects">
+              <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('Flanger')">Flanger</button>
+              <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('Wah-wah')">Wah-Wah</button>
+              <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('Tremolo')">Tremolo</button>
+              <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('Delay')">Delay</button>
+              <button type="button" class="btn btn-dark" (click)="aplicarEfectoVideo('Fuzz')">Distorsion</button>
+              <button type="button" class="btn btn-success iz" (click)="exportarVideo()">Exportar Video</button>
+            </div>
         </div>
-    </div>
+      </div>
+      
+  
+      
+  
+  </div>
+
+    <footer class="site-footer fixed-bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="row">
+            <div class="col-12 text-md-center text-left">
+              <p>Copyright Protected @ 2023 - Andy and Sebas Corp.  All rights reserved.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
 
 
-    <div class="image-overlay">
-    </div>
-
-    <button class="export-button" (click)="exportarVideo()">Exportar video</button>
-
-</div>

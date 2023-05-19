@@ -1,31 +1,22 @@
-  /* Estilos CSS */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
 
   .video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin-top: 1%;
   }
 
-  .video-effects {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  .btn {
+    margin-left: 2%;
   }
-  .audio-effects {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+
+  video, canvas {
+    width: 40%;
+    height: 20%;
+    margin-right: 5%;
   }
-  
+
+  .form-control {
+      width: auto;
+  }
+
   .effect-item {
     margin: 0 10px;
     cursor: pointer;
@@ -40,3 +31,28 @@
     cursor: pointer;
   }
   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: #2C3E50;
+}
+
+.site-footer{
+  padding: 1%;
+  background:  #2C3E50;
+  font-size: 1rem;
+  color: white;
+}
+
+.op {
+  margin-top: 1%;
+}
+
+.iz {
+  margin-left: 20%;
+}
